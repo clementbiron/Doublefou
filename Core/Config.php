@@ -31,19 +31,17 @@
 		 * Parametrer le mode debug
 		 * @param integer $pDebug
 		 */
-		public static function setDebug($pDebug)
+		public static function setDebug()
 		{
-            $pDebug = (is_string($pDebug) === true ? boolval($pDebug) : $pDebug);
-			self::$_debug = $pDebug;
+			self::$_debug = WP_DEBUG;
 			
-			if($pDebug === true){				
+			if(WP_DEBUG === true){				
 				Debug::showErrors();
 			}
 			else{
 				Debug::hideErrors();
 			}
 		}
-
 		/**
 		 * Récupérer le niveau de debug (0|1)
 		 * @return integer
