@@ -200,6 +200,7 @@
 
 		/**
 		 * Retirer les accents des fichiers uploadés
+         * @deprecated since 30/07/2018, using beapi sanitanize filename muplugin
 		 */
 		public static function removeAccentsToUploadFiles()
 		{
@@ -208,6 +209,7 @@
 
 		/**
 		 * Supprimer la poncutation française des fichiers uploadés
+         * @deprecated since 30/07/2018, using beapi sanitanize filename muplugin
 		 */
 		public static function removeFrenchPonctuationToUploadFiles()
 		{
