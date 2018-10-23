@@ -70,7 +70,7 @@
 			if(isset(self::$_properties[$pPropertie])){
 				return self::$_properties[$pPropertie];
 			}else{
-				throw new \Exception($pPropertie .' is not defined in '.get_class($this));
+				throw new \Exception($pPropertie .' is not defined in '.get_class(self));
 			}
 		}
 		
