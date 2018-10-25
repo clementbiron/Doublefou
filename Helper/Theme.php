@@ -101,7 +101,6 @@
 		{
 			ob_start();
 			language_attributes($doctype);
-
 			return ob_get_clean();
 		}
 

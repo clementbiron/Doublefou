@@ -98,42 +98,6 @@
 				self::$_errorHandler->unregister();
 			}
 		}
-
-		/** 
-		 * Retrouver le nom d'une variable
-		 * @param unknown_type $var
-		 */
-		public static function varName($var)
-		{
-			foreach($GLOBALS as $var_name => $value) {
-				if ($value === $var) {
-					return $var_name;
-				}
-			}	
-			return false;
-		}
-
-		/**
-		 * Afficher des infos de debug de WordPress dans la console
-		 */
-		public static function addWpInfoToConsole()
-		{	
-			Debug::addToConsole(self::getWPInfo());
-		}
-
-		/**
-		 * Récupérer des infos générales sur WP
-		 */
-		public static function getWPInfo()
-		{
-			return array(
-				'Permalink structure' => get_option('permalink_structure'),
-				'ABSPATH' => ABSPATH,
-				'Number of database queries' => get_num_queries(),
-				'Memory (mb)' => round( memory_get_peak_usage()/( 1024*1024 ), 3 ),
-				'Queries time (seconds)' => timer_stop(0)
-			);
-		}
 	}
 
 ?>

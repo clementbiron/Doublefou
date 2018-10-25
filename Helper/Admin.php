@@ -199,27 +199,6 @@
 		}
 
 		/**
-		 * Retirer les accents des fichiers uploadés
-         * @deprecated since 30/07/2018, using beapi sanitanize filename muplugin
-		 */
-		public static function removeAccentsToUploadFiles()
-		{
-			add_filter('sanitize_file_name', 'remove_accents');
-		}
-
-		/**
-		 * Supprimer la poncutation française des fichiers uploadés
-         * @deprecated since 30/07/2018, using beapi sanitanize filename muplugin
-		 */
-		public static function removeFrenchPonctuationToUploadFiles()
-		{
-			add_filter( 'sanitize_file_name_chars', function ($special_chars = array()){
-				$special_chars = array_merge( array( '’', '‘', '“', '”', '«', '»', '‹', '›', '—', 'æ', 'œ', '€' ), $special_chars );
-				return $special_chars;
-			} ,10, 1);
-		}
-
-		/**
 		 * Ajouter des types de fichiers authoriser à l'upload
 		 * @param array $pArray Liste des types : id => mimetype
 		 */
