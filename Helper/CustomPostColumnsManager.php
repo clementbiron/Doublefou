@@ -117,7 +117,13 @@
                                 $date = strtotime($date);
                                 echo date_i18n('d M Y',$date);
 							}
-							break;
+                            break;
+                        case 'object':
+                            $object = get_field($acffield, $post->ID);	
+                            if($object){
+                                echo $object->post_title;
+                            }
+                            break;
 						case 'select':
 						case 'default':
 						default:
