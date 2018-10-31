@@ -191,7 +191,10 @@
 						}
 					</style>';
 				});
-			}
+            }
+            
+            //On retourne le nom de la colonne générée
+            return $safename;
 		}
 
 		/**
