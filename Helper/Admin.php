@@ -38,7 +38,7 @@
 					for($i = 0; $i < $l ; $i++){				
 						remove_menu_page($pArray[$i]);
 					}										
-				});
+				}, 999);
 			}
 		}
 
@@ -68,7 +68,7 @@
 							unset($submenu['themes.php'][6]);
 						}
 					}										
-				});
+				}, 999);
 			}	
 		}
 
