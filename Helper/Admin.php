@@ -282,7 +282,7 @@
 		 * disableJPEGCompression
 		 * @return void
 		 */
-		public static function disableJPEGCompression()
+		public static function disableJPEGCompression()	
 		{
 			add_filter('jpeg_quality',  function($settings){ return 100; });
 			add_filter('wp_editor_set_quality',  function($settings){ return 100; });

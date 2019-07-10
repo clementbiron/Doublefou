@@ -127,14 +127,14 @@
 
 		/**
 		 * hideInAdminByPageTemplate
-		 * @param  string $pPageTemplate nom du page template, exemple : page-pattern.php
-		 * @param  string $pRole Rôle à partir duquel la page apparait
+		 * @param  array $pPageTemplate tableau des noms du page template, exemple : page-pattern.php
+		 * @param  string $pRole Rôle à partir duquel la page apparait, default "activate_plugins
 		 * @return object 
 		 */
-		public static function hideInAdminByPageTemplate($pPageTemplate, $pRole = 'activate_plugins')
+		public static function hideInAdminByPageTemplate($pPageTemplates, $pRole = 'activate_plugins')
 		{
 			//Après la création de la query mais avant son lancement
-			add_action('pre_get_posts', function($query) use ($pPageTemplate,$pRole)
+			add_action('pre_get_posts', function($query) use ($pPageTemplates,$pRole)
 			{
 				//Si on est pas en admin -> go out
 				if(!is_admin())
@@ -147,17 +147,17 @@
 
 					//Et que l'on est sur la bonne page de l'admin
 					if('edit.php' == $pagenow && ( get_query_var('post_type') && 'page' == get_query_var('post_type') ) ){
-
+												
 						//On modifie la query
 						$query->set('meta_query', array(
-					            'relation' => 'AND',
-					            array(
-					                'key'     => '_wp_page_template',
-					                'value'    => $pPageTemplate,
-					                'compare' => 'NOT IN'
-					            )
-					        )
-				        );	
+								'relation' => 'AND',
+								array(
+									'key'     => '_wp_page_template',
+									'value'   => $pPageTemplates,
+									'compare' => 'NOT IN'
+								)
+							)
+						);							
 					}
 				}
 
