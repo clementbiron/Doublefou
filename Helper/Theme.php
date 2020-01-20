@@ -35,6 +35,8 @@
 			remove_action('wp_head', 'rest_output_link_wp_head');
 			remove_action('wp_head', 'wp_oembed_add_discovery_links');
 			remove_action('wp_head', 'wp_resource_hints', 2 );
+			remove_action('wp_head', 'feed_links_extra', 3);
+			remove_action('wp_head', 'feed_links', 2 );	
 		}
 
 		/**
