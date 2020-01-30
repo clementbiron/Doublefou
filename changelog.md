@@ -1,3 +1,6 @@
+# changelog  (30/01/2020)
+- `Helper\Admiun` add function to disable big image threshold
+
 # changelog  (25/10/2018)
 - `Core\Config` deleted old functions
 - `Core\Debug` deleted old functions
