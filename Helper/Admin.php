@@ -287,6 +287,15 @@
 			add_filter('jpeg_quality',  function($settings){ return 100; });
 			add_filter('wp_editor_set_quality',  function($settings){ return 100; });
 		}
+
+		/**
+		 * disableBigImageTheshold
+		 * @return void
+		 */
+		public static function disableBigImageTheshold()
+		{
+			add_filter( 'big_image_size_threshold', '__return_false' );
+		}
 	}
 
 ?>
